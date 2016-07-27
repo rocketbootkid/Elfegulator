@@ -2,7 +2,7 @@
 
 $log = "";
 
-function elfegulate($text) {
+function elfegulate($text, $noise) {
 	
 	writeLog("elfegulate(): " . $text);
 	
@@ -26,7 +26,7 @@ function elfegulate($text) {
 			if ($characters[$c] == "a" || $characters[$c] == "e" || $characters[$c] == "i" || $characters[$c] == "o" || $characters[$c] == "u") {
 				# Elfegulate
 				writeLog("elfegulate(): '" . $characters[$c] . "' is a vowel!");
-				array_push($elfegged_characters, $characters[$c] . "lfeg");
+				array_push($elfegged_characters, $characters[$c] . $noise);
 			} else {
 				writeLog("elfegulate(): '" . $characters[$c] . "' is NOT a vowel!");
 				array_push($elfegged_characters, $characters[$c]);
